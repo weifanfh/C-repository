@@ -1,4 +1,11 @@
 #include "symbol_example.h"
+/*
+用于验证解释下列四个符号在C++中类的作用与意义
+符号1：.
+符号2：->
+符号3：:
+符号4：::
+*/
 
 Example::Example()
 {
