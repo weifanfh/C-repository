@@ -7,7 +7,18 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                "${workspaceFolder}/*.cpp",
+                /*====================解决编码方式导致的乱码的设置====================*/
+                // "-fexec-charset=GBK",   // 取消注释时vs code执行会乱码，但是cmd不会乱码
+                "-finput-charset=UTF-8",// 取消注释时vs code执行不会乱码，但是cmd会乱码
+
+                /*====================将头文件和对应源文件分装到文件中的设置====================*/
+                "${workspaceFolder}/*.cpp", //官网提供了解释，会找到工作目录（当前文件所在目录）下的所有.cpp文件
+
+                // 注意：下面两行的设置需要结合：c_cpp_properties.json中：includePath的设置，如果没有同时设置，编译会报错
+                // 下面包含了两个有头文件和相应源文件的文件夹，并且在编译时会找到文件夹中的所有.cpp文件夹
+                // 也可以不进行下面的设置，只要将头文件对应的源文件放到和main文件所在路径即可
+                "${workspaceFolder}/system_example/*.cpp", 
+                "${workspaceFolder}/system_exchange_example/*.cpp", 
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],

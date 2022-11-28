@@ -3,7 +3,14 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**", //头文件目录(/**表示遍历所有子目录)
+
+                /*====================将头文件和对应源文件分装到文件中的设置====================*/
+                //注意：
+                //如果上面一行不是：${workspaceFolder}/**,需要使用下面的方法将头文件添加到包含路径
+                // "${workspaceFolder}/system_example", 
+                // "${workspaceFolder}/system_exchange_example", //
+
             ],
             "defines": [
                 "_DEBUG",
