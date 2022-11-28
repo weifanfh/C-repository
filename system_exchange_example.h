@@ -14,5 +14,5 @@ class SystemBase
         void decimal_to_binary();
 };
 
-
+void show_system();
 #endif

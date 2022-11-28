@@ -32,4 +32,5 @@ class Example_2: public Example
         int variable_2 = 100;
 };
 
+void show_symbol();
 #endif

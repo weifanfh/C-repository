@@ -39,3 +39,10 @@ void SystemBase::decimal_to_binary()
     result = to_string(high_value) + result;
     cout << "十进制数"<< value_ten <<"对应的二进制值为："<< result<<endl;
 }
+
+void show_system()
+{
+    // 展示进制转换逻辑
+    SystemBase run_base;
+    run_base.binary_to_decimal();
+}
